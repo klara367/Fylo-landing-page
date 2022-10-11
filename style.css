@@ -1,0 +1,443 @@
+/* General styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --very-dark-blue: hsl(243, 87%, 12%);
+    --desaturated-blue: hsl(238, 22%, 44%);
+    --bright-blue: hsl(224, 93%, 58%);
+    --light-blue: hsl(224, 93%, 70%);
+    --moderate-cyan: hsl(170, 45%, 43%);
+    --light-grayish-blue: hsl(240, 80%, 98%);
+    --light-gray: hsl(0, 0%, 75%);
+    --white: hsl(0, 0%, 100%);
+    --light-red: hsl(352, 98%, 64%);
+    --blue-gray: hsl(238, 16%, 34%);
+} 
+
+body {
+    font-family: "Raleway", sans-serif;
+    color: var(--very-dark-blue);
+    font-weight: 400;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.header__logo {
+    max-width: 25vw;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Utility classes */
+
+.light-text {
+    color: var(--light-grayish-blue);
+}
+
+.padding-inline {
+    padding-inline: min(4rem, 6.5%);
+}
+
+.padding-block {
+    padding-block: 4rem;
+}
+
+.display-flex {
+    display: flex;
+}
+
+.gap-small {
+    gap: 0.5rem;
+}
+
+.gap-middle {
+    gap: 1.25rem;
+}
+
+/* Text styling */
+
+h1 {
+    font-weight: 700;
+    font-size: min(calc(1rem + 2vw), 2.5rem);
+    line-height: 1.5;
+    padding-bottom: 1rem;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: min(calc(0.9rem + 1.5vw), 2.5rem);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+}
+
+p {
+    font-size: clamp(0.75rem, 1rem, calc(0.7rem + 1vw))
+}
+
+blockquote {
+    font-size: 0.8rem;
+    margin-block: 0.7rem;
+    line-height: 1.8;
+}
+
+p, blockquote {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.reviewer-info__position {
+    font-size: 0.6rem;
+    padding-right: 0;
+}
+
+/* Buttons styling */
+
+a:link,
+a:visited {
+    color: var(--light-grayish-blue);
+    transition: color 0.25s ease;
+}
+
+header a:link,
+header a:visited {
+    color: var(--very-dark-blue);
+}
+
+a:hover,
+a:active {
+    color: var(--light-blue);
+}
+
+.how-fylo-works:link,
+.how-fylo-works:visited {
+    border-bottom: 1px solid var(--moderate-cyan);
+    color: var(--moderate-cyan);
+    transition: filter 0.15s ease;
+}
+
+.btn-how-fylo-works{
+    text-align: center;
+}
+
+.how-fylo-works::after {
+    content: url(./images/icon-arrow.svg);
+    position: relative;
+    top: 3px;
+}
+.how-fylo-works:hover,
+.how-fylo-works:active {
+    filter: brightness(140%);
+}
+
+.btn {
+    margin-top: 0.25rem;
+    padding-inline: 4rem;
+    background-color: var(--bright-blue);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0  0  0.5rem var(--light-gray);
+    transition: background-color 0.25s ease;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: var(--light-blue);
+}
+
+.btn:active {
+    box-shadow: inset 2px 2px 6px var(--desaturated-blue);
+}
+
+.btn-third-section {
+    padding-inline: 2.5rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 0  0.5rem var(--blue-gray);
+}
+
+.contact-hover:hover {
+    filter: brightness(0.2) invert(.2) sepia(.9) hue-rotate(180deg) saturate(400%);
+}
+
+/*input-email styling */
+
+input {
+    padding: 0.75rem;
+    width: 100%;
+    text-align: start;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.75rem;
+    border-radius: 3px;
+    border: 1px solid var(--light-gray);
+}
+
+input[type=email]:invalid {
+    outline: 1.5px solid var(--light-red);
+}
+
+.input-third-section {
+    border: none;
+    box-shadow: 0  0  0.25rem var(--blue-gray);
+}
+
+.invalid-email {
+    display: none;
+    padding-bottom: 5rem;
+}
+
+input:invalid + .invalid-email {
+    display: block;
+    position: absolute;
+    font-size: 0.9rem;
+    color: var(--light-red);
+}
+
+input:invalid + .invalid-light {
+    color: var(--light-grayish-blue);
+}
+
+input:invalid ~ .btn {
+    margin-top: 2rem;
+}
+
+/* Header */
+
+.header {
+    padding-top: min(4rem, 6.5%);
+    font-size: 0.8rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* First-section */
+
+.first-section {
+    position: relative;
+    padding-bottom: 10%;
+}
+
+.first-section__text-part {
+    padding-top: 4rem;
+    flex: 1;
+}
+
+.first-section__img {
+    flex: 1;
+    align-self: center;
+}
+
+/* Second-section */
+
+.second-section {
+    padding-top: 8rem;
+    background-repeat: no-repeat;
+    background-color: var(--light-grayish-blue);
+    text-align: start;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-section__img {
+    flex: 1;
+}
+
+.second-section__text-part {
+    padding-top: 4rem;
+    flex: 1.4;
+}
+
+.reviewer-photo {
+    max-width: 11%;
+    border-radius: 50%;
+}
+
+.reviewer-info__name {
+    font-weight: 700;
+    font-size: 0.7rem;
+}
+
+.testimonial-styling {
+    background-color: var(--white);
+    margin-top: 3rem;
+    margin-inline: auto;
+    padding: 1.75rem;
+    max-width: 21rem;
+    border-radius: 5px;
+    box-shadow: 0  0  0.75rem var(--light-gray);
+}
+
+/* Second section background curve */
+
+.curve {
+    position: absolute;
+    bottom: -10rem;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.curve svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 10.625rem;
+}
+
+.curve .shape-fill {
+    fill: var(--white);
+}
+
+/* Third-section */
+
+.third-section {
+    background-color: var(--desaturated-blue);
+}
+
+.third-section.display-flex {
+    align-items: center;
+}
+
+/* Footer */
+
+.footer {
+    background-color: var(--very-dark-blue);
+    padding-top: 7rem;
+    text-align: start;
+}
+
+.footer__logo {
+    filter: brightness(0) invert(100%);
+    margin-bottom: 1.5rem;
+}
+
+.footer__social {
+    width: 2rem;
+    filter: invert(100%);
+}
+
+.footer__logo:hover,
+.footer__logo:active {
+    filter: none;
+}
+
+.footer__social:hover,
+.footer__social:active {
+    filter: brightness(0.2) invert(.4) sepia(.9) hue-rotate(180deg) saturate(500%);
+}
+
+.social-flex-align {
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.img-inline{
+    display: inline;
+    margin-right: 0.75rem;
+}
+
+.footer nav, .pdg-right {
+    padding-right: 15%;
+}
+
+.footer li {
+    margin-bottom: 1rem;
+}
+
+/* Desktop design */
+
+@media only screen and (min-width: 768px) {
+    body {
+        text-align: start;
+    }
+
+    .display-flex-desktop {
+        display: flex;
+    }
+
+    .reverse-display-flex {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .social-flex-align {
+        align-items: flex-start;
+    }
+
+    .gap-big {
+        gap: 2rem;
+    }
+
+    .padding-right {
+        padding-right: 25%;
+    }
+
+    .padding-block {
+        padding-block: 5rem;
+    }
+
+    input {
+        margin-top: 1.75rem;
+        padding: 1rem;
+        padding-right: 7rem;
+        width: auto;
+    }
+
+    .input-third-section {
+        padding-right: 15rem;
+    }
+
+    .btn-how-fylo-works {
+        text-align: start;
+    }
+
+    .header {
+        font-size: 1rem;
+    }
+
+    .header__logo {
+        max-width: 100%;
+    }
+    
+    .first-section {
+        padding-bottom: 9rem;
+    }
+
+    .testimonial-styling {
+        margin-inline: 0;
+    }
+
+    .curve svg {
+        height: 15.625rem;
+    }
+
+    footer .padding-block {
+        padding-block:  0;
+    }
+}
