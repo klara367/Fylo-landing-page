@@ -429,6 +429,11 @@ input:invalid ~ .btn {
         padding-bottom: 9rem;
     }
 
+    .second-section {
+        padding-bottom: 7rem;
+        padding-top: 8rem;
+    }
+
     .testimonial-styling {
         margin-inline: 0;
     }
